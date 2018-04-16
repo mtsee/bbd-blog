@@ -1,0 +1,56 @@
+@import '../color.less';
+.header{
+    height: @headerHei;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid @border;
+    background: @white;
+    box-shadow: @shadow;
+    line-height: @headerHei;
+    padding-left: 40px;
+    z-index: 999;
+    .inner{
+        width: @vw;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        transition: width 0.5s;
+    }
+    .logo{
+        display: inline-block;
+        margin-right: 40px;
+        color: @title;
+        font-weight: bolder;
+        font-size: 16px;
+        i{
+            color: @main;
+            font-size: 12px;
+        }
+    }
+    .navs{
+        display: inline-block;
+        a{
+            margin-right: 40px;
+            padding-bottom: 5px;
+            text-decoration: none;
+        }
+        .active{
+            border-bottom: 2px solid @main;
+        }
+    }
+    .login{
+        display: inline-block;
+        position: absolute;
+        right: 40px;
+        a{
+            margin-left: 30px;
+        }
+        .article-btn{
+            background: @title;
+            padding: 3px 10px;
+            color: @white;
+        }
+    }
+}

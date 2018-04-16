@@ -1,0 +1,43 @@
+@import '../color.less';
+.commit {
+    .tright {
+        .total {
+            font-size: 16px;
+            float: left;
+            font-weight: bolder;
+        }
+        text-align: right;
+        margin: 10px 0;
+    }
+    .list{
+        padding: 20px 0;
+        ul{
+            padding: 0;
+        }
+    }
+    .item {
+        list-style: none;
+        position: relative;
+        padding: 20px 0;
+        border-bottom: 1px solid @border;
+        .acator,
+        .name,
+        .date,
+        .like {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .date{
+            position: absolute;
+            top: 15px;
+            right: 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .like {
+            margin-right: 20px;
+            font-size: 14px;
+        }
+    }
+}

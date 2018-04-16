@@ -1,0 +1,36 @@
+{
+  "name": "h5",
+  "version": "0.0.1",
+  "description": "BBD blog",
+  "keywords": [
+    "blog"
+  ],
+  "homepage": "http://www.bbdweb.com",
+  "author": "mantou",
+  "license": "MIT",
+  "scripts": {
+    "start": "supervisor server.js"
+  },
+  "dependencies": {
+    "captchapng": "^0.0.1",
+    "crypto": "^1.0.1",
+    "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-cors": "0.0.16",
+    "koa-gzip-middleware": "^1.0.0",
+    "koa-helmet": "^3.3.0",
+    "koa-logger": "^3.1.0",
+    "koa-multer": "^1.0.2",
+    "koa-response-time": "^2.0.0",
+    "koa-router": "^7.3.0",
+    "koa-session": "^5.5.1",
+    "koa-static": "^4.0.2",
+    "moment": "^2.21.0",
+    "mysql": "^2.13.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.10.2"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
+  }
+}

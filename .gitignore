@@ -1,0 +1,4 @@
+/node-server/node_modules
+/node-server/upload/images/*
+/node-web/node_modules
+/node-web/dist

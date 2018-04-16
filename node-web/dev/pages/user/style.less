@@ -1,0 +1,59 @@
+@import '../color.less';
+.photos {
+    text-align: center;
+    position: relative;
+    .nick {
+        position: relative;
+        z-index: 10;
+    }
+    .avatar-uploader {
+        display: inline-block;
+        position: relative;
+        z-index: 10;
+        .inners{
+            height: 100%;
+        }
+        .anticon{
+            margin-top: 45px;
+        }
+    }
+    .avatar-uploader>.ant-upload {
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        border-radius: 1000px;
+        overflow: hidden;
+        background: @white;
+        border: 4px solid @border;
+        box-sizing: border-box;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -24px;
+        background: @main;
+        opacity: 0.5;
+        height: 125px;
+    }
+}
+
+.article-item2 {
+    .item {
+        border-bottom: 2px solid @border;
+        .other,
+        h1 {
+            margin-left: 0;
+        }
+        .delbtn,
+        .editbtn {
+            position: absolute;
+            top: 26px;
+            right: 10px;
+        }
+        .delbtn{
+            right: 80px;
+        }
+    }
+}

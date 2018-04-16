@@ -1,0 +1,113 @@
+@import '../color.less';
+.sliderbox {
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 83px;
+    z-index: 100;
+    background: @white;
+    min-height: 600px;
+    height: 100%;
+    h1 {
+        text-align: center;
+    }
+    .tags {
+        .ant-tag {
+            margin-bottom: 10px;
+        }
+    }
+    .hexbox {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        .hex:nth-child(1) {
+            transform: scale(0.2) translate(140px, 100px);
+            background: @title;
+            opacity: 0.2;
+        }
+        .hex:nth-child(2) {
+            transform: scale(0.4) translate(270px, -25px);
+            background: @main;
+            opacity: 0.5;
+        }
+        .hex:nth-child(3) {
+            transform: scale(0.6) translate(80px, 80px);
+            background: @main;
+        }
+    }
+    .hex {
+        width: 150px;
+        height: 86px;
+        background-color: @main;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: auto 173px;
+        position: relative;
+        margin: 25px 5px;
+        text-align: center;
+        zoom: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: 0 0;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-indent: -9999em;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .corner-1,
+        .corner-2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            z-index: -2;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+        .corner-1 {
+            z-index: -1;
+            transform: rotate(60deg);
+        }
+        .corner-2 {
+            transform: rotate(-60deg);
+        }
+        .corner-1:before,
+        .corner-2:before {
+            width: 173px;
+            height: 173px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: inherit;
+            background-repeat: no-repeat;
+            backface-visibility: hidden;
+        }
+        .corner-1:before {
+            transform: rotate(-60deg) translate(-87px, 0px);
+            transform-origin: 0 0;
+        }
+        .corner-2:before {
+            transform: rotate(60deg) translate(-48px, -11px);
+            bottom: 0;
+        }
+    }
+}
+
+.article {
+    margin-right: 300px;
+    padding: 0 10px 10px 0;
+    .ant-pagination {
+        margin: 20px 0;
+    }
+}

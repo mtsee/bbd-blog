@@ -1,0 +1,65 @@
+@import '../color.less';
+.detail {
+    margin: 20px auto;
+    width: @vw;
+    position: relative;
+    .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: @white;
+        width: 190px;
+        height: 210px;
+        padding: 40px;
+        img{
+            width: 100%;
+        }
+        p{
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+    .article {
+        margin-right: 200px;
+        background: @white;
+        padding: 20px;
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .other {
+            margin-bottom: 20px;
+            font-size: 12px;
+            .like{
+                font-size: 18px;
+                color: @like;
+                .anticon{
+                    color: @like;
+                }
+            }
+            .acator{
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            .tag {
+                padding: 0 5px;
+            }
+            i {
+                display: inline-block;
+                margin: 0 10px;
+                color: #ccc;
+            }
+        }
+        .acator {
+            width: 40px;
+            height: 40px;
+        }
+        .rich-text {
+            padding: 10px 0;
+        }
+    }
+    .commit{
+        padding: 30px 0;
+    }
+}

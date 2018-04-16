@@ -1,0 +1,116 @@
+@import '../color.less';
+.edit {
+    width: 1400px;
+    margin: 10px auto;
+    background: @white;
+    padding: 30px;
+    .markdowntext {
+        border: none;
+        background: @title;
+        color: @white;
+    }
+    .markdown-body{
+        padding: 10px 20px;
+        height: 100%;
+    }
+    .ralign{
+        text-align: right;
+        .ant-btn{
+            margin-left: 10px;
+        }
+    }
+    input,
+    textarea {
+        outline: none;
+        border: none;
+        box-shadow: none;
+        background: @bg;
+        &:hover {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+    .ant-tag{
+        background: @bg;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .ant-tag-checkable-checked{
+        background: @title;
+    }
+    .markdowninfo {
+        margin: 0 0 30px 0;
+        font-size: 24px;
+        vertical-align: middle;
+    }
+    .info {
+        .img {
+            float: right;
+            width: 650px;
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            background: @bg;
+            text-align: center;
+            position: relative;
+            .anticon-upload {
+                position: absolute;
+                font-size: 40px;
+                top: 35%;
+                color: #ccc;
+                cursor: pointer;
+            }
+            img {
+                position: relative;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .hasimg {
+                position: absolute;
+                bottom: 0;
+                z-index: 100;
+                right: 0;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                a {
+                    color: @white;
+                    font-size: 18px;
+                    margin: 0 6px;
+                }
+            }
+        }
+        .title,
+        .desc,
+        .tags {
+            margin-bottom: 10px;
+        }
+    }
+
+    .editbox{
+        position: relative;
+        .edititem{
+            width: 50%;
+            float: left;
+            height: 100%;
+        }
+    }
+}
+
+.md-header{
+    height: 40px;
+    background: @title;
+    line-height: 40px;
+    border-bottom: 1px solid #000;
+    padding-left: 10px;
+    a{
+        color: @white;
+        font-size: 24px;
+    }
+}
