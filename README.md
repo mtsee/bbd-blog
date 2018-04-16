@@ -1,5 +1,7 @@
 # BBD-blog
 ### BBD前端团队博客系统 
+[demo view](http://bbdblog.h5ds.com/)
+
 > 服务端 nodejs + mysql + koa + sequelize 
 
 > web前端 react + mobx
