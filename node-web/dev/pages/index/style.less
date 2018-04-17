@@ -1,6 +1,6 @@
 @import '../color.less';
 .index {
-    .article{
+    .article {
         min-height: 600px;
     }
     .mpic {
@@ -13,7 +13,7 @@
             background: @main;
             overflow: hidden;
             position: relative;
-            img{
+            img {
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
@@ -31,8 +31,8 @@
     }
 }
 
-.about{
-    .article{
+.about {
+    .article {
         background: @white;
         margin-right: 310px;
         padding: 30px;
@@ -111,5 +111,58 @@
     img {
         width: 100%;
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .index .inner {
+        width: 100%;
+        padding-left: 10px;
+    }
+    .header {
+        padding-left: 10px;
+    }
+    .header .inner {
+        width: 100% !important;
+    }
+    .header .logo {
+        display: none;
+    }
+    .header .login{
+        right: 10px;
+    }
+    .header .navs a {
+        margin-right: 10px;
+    }
+    .header .login a{
+        margin-left: 10px;
+    }
+    .article {
+        margin-right: 0
+    }
+    .sliderbox {
+        display: none;
+    }
+    .about .article {
+        margin-right: 10px;
+    }
+    .detail{
+        width: 100%;
+    }
+    .detail .article{
+        margin-right: 10px;
+    }
+    .detail .right{
+        display: none;
+    }
+    .edit{
+        width: 100%;
+    }
+    .edit .info .ant-col-12{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .edit .editbox .edititem{
+        width: 100%;
     }
 }

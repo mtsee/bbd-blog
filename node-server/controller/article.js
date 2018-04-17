@@ -36,6 +36,8 @@ exports.getArticles = (ctx, next) => {
         } else {
             errorHander(ctx, { code: 403, msg: '没有登录！' });
         }
+    } else {
+        where.hide = 0;
     }
     return readSQL({
         ctx,
@@ -145,7 +147,7 @@ exports.updateLike = (ctx, next) => {
  * @desc 更新文章
  */
 exports.updateArticle = (ctx, next) => {
-    const { id, title, pic, desc, author, content, data, tags } = ctx.request.body || {};
+    const { id, title, pic, desc, author, content, data, tags, hide } = ctx.request.body || {};
     let owner = ctx.session.user.id;
     if (!id) {
         errorHander(ctx, { msg: '参数错误！' });
@@ -164,6 +166,7 @@ exports.updateArticle = (ctx, next) => {
             author: author || ctx.session.user.username,
             content,
             tags,
+            hide,
             data
         },
         sequeObj: {
@@ -173,6 +176,7 @@ exports.updateArticle = (ctx, next) => {
             desc: { type: Sequelize.CHAR },
             date: { type: Sequelize.CHAR },
             author: { type: Sequelize.CHAR },
+            hide: { type: Sequelize.INTEGER },
             content: { type: Sequelize.TEXT('long') },
             data: { type: Sequelize.TEXT('long') },
             tags: { type: Sequelize.CHAR }
@@ -218,7 +222,7 @@ exports.updateDraft = (ctx, next) => {
  * @desc 新建文章
  */
 exports.addArticle = (ctx, next) => {
-    const { title, pic, desc, author, content, data, tags } = ctx.request.body || {};
+    const { hide, title, pic, desc, author, content, data, tags } = ctx.request.body || {};
     let owner = ctx.session.user.id;
     return createSQL({
         ctx,
@@ -233,7 +237,8 @@ exports.addArticle = (ctx, next) => {
             author: author || ctx.session.user.username,
             content,
             tags,
-            data
+            data,
+            hide: hide ? 1 : 0
         },
         sequeObj: {
             owner: { type: Sequelize.CHAR },
@@ -243,6 +248,7 @@ exports.addArticle = (ctx, next) => {
             desc: { type: Sequelize.CHAR },
             date: { type: Sequelize.CHAR },
             author: { type: Sequelize.CHAR },
+            hide: { type: Sequelize.INTEGER },
             data: { type: Sequelize.TEXT('long') },
             content: { type: Sequelize.TEXT('long') },
             tags: { type: Sequelize.CHAR }

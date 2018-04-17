@@ -97,12 +97,12 @@ export default class Index extends Component {
                 }
             });
         } else {
-            this.addArticle();
+            this.addArticle(true);
         }
     };
 
     // 发布文章
-    addArticle = () => {
+    addArticle = (hide) => {
         const { title, pic, desc, author, data, tags } = this.state;
         if (!title) {
             message.error('必须填写标题！');
@@ -111,10 +111,10 @@ export default class Index extends Component {
         const query = parseQueryString();
         if (isNot(query.id)) {
             // 添加文章
-            addArticle({ title, pic, desc, author, content: $('.markdown-body').html(), data, tags }).then(res => {
+            addArticle({hide, title, pic, desc, author, content: $('.markdown-body').html(), data, tags }).then(res => {
                 if (res.code === 200) {
                     console.log(res);
-                    message.success('发布成功！');
+                    message.success(hide ? '保存草稿成功！' : '发布成功！');
                     // 发布成功后，修改url的参数，避免重新提交
                     browserHistory.push('/edit?id=' + res.data.id);
                 } else {
@@ -131,7 +131,8 @@ export default class Index extends Component {
                 author,
                 content: $('.markdown-body').html(),
                 data,
-                tags
+                tags,
+                hide: 0
             }).then(res => {
                 if (res.code === 200) {
                     console.log(res);
