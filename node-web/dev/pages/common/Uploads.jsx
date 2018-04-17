@@ -14,7 +14,7 @@ export default class Uploads extends Component {
         }
         if (file.status === 'done') {
             if (this.props.uploadEnd) {
-                this.props.uploadEnd(file.response);
+                this.props.uploadEnd(file.response, file);
             }
         }
     };

@@ -165,6 +165,19 @@ export default class Index extends Component {
         });
     };
 
+    // 编辑器中上传图片
+    uploadArticleImg = (data, file) => {
+        // console.log(data, file)
+        let str = '';
+        data.forEach(elem => {
+            str += `
+![${file.name}](${location.origin}${elem.data.url})
+            `;
+        });
+        insertAfterText($('.markdowntext')[0], str);
+        this.setValues($('.markdowntext').val());
+    }
+
     componentDidMount() {
         // 获取数据
         const query = parseQueryString();
@@ -292,6 +305,7 @@ export default class Index extends Component {
                             <a onClick={e => this.toolbar('table')} className="icobbd ico-table" />
                             <a onClick={e => this.toolbar('from')} className="icobbd ico-from" />
                             <a onClick={e => this.toolbar('line')} className="icobbd ico-line" />
+                            <Uploads uploadEnd={this.uploadArticleImg}><a className="icobbd ico-img" /></Uploads>
                         </div>
                         <TextArea
                             className="markdowntext"
